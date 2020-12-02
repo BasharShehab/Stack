@@ -6,24 +6,19 @@ void incStack(int* &stack){
 	int tempArr[length];
 	for (int i = 0; i <= top; i++){
 		tempArr[i] = stack[i];
-	}
-	for (int i = top ; i >=0 ; i--){
-			cout << tempArr[i] << " ";
-		}
-	cout << endl << " temp array after second loop incStack() " << endl;
-		
+	}	
 	length+=10;
 	stack = new int[length];
 	for (int i = 0 ; i < length; i++){
 		stack[i] = NULL;
 	}
-	for(int i = 0; i < top; i++){
+	for(int i = 0; i <= top; i++){
 		stack[i] = tempArr[i];
 	}
 }	
 
 void push(int x){
-	if (top >= length){
+	if (top >= length-1){
 		cout << "Extending stack array . . ." << endl;
 		incStack(stack);
 	    push(x);		
